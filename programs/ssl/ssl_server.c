@@ -201,6 +201,10 @@ int main( int argc, char *argv[] )
     ssl_set_ca_chain( &ssl, srvcert.next, NULL, NULL );
     ssl_set_own_cert( &ssl, &srvcert, &rsa );
 
+
+    int cipher = TLS_DHE_RSA_WITH_AES_256_CBC_SHA;
+    ssl_set_ciphersuites(&ssl, &cipher);
+
     printf( " ok\n" );
 
 reset:
