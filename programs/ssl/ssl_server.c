@@ -54,7 +54,7 @@
     "<h2>PolarSSL Test Server</h2>\r\n" \
     "<p>Successful connection using: %s</p>\r\n"
 
-#define DEBUG_LEVEL 0
+#define DEBUG_LEVEL 5
 
 void my_debug( void *ctx, int level, const char *str )
 {
