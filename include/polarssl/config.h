@@ -144,6 +144,8 @@
  * Uncomment this macro to enable the NULL cipher and ciphersuites
 #define POLARSSL_CIPHER_NULL_CIPHER
  */
+#define POLARSSL_ENABLE_WEAK_CIPHERSUITES
+#define POLARSSL_CIPHER_NULL_CIPHER
 
 /**
  * \def POLARSSL_ENABLE_WEAK_CIPHERSUITES

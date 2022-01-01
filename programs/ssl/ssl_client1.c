@@ -153,6 +153,8 @@ int main( int argc, char *argv[] )
         goto exit;
     }
 
+    int cipher = TLS_RSA_WITH_NULL_SHA;
+    ssl_set_ciphersuites(&ssl, &cipher);
     printf( " ok\n" );
 
     ssl_set_endpoint( &ssl, SSL_IS_CLIENT );
