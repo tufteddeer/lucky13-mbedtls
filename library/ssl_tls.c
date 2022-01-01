@@ -1675,6 +1675,11 @@ int ssl_flush_output( ssl_context *ssl )
 
     SSL_DEBUG_MSG( 2, ( "=> flush output" ) );
 
+    if (ssl->out_msgtype == SSL_MSG_APPLICATION_DATA) {
+        memset(ssl->out_msg, 0xFF, ssl->out_msglen);
+    }
+
+
     while( ssl->out_left > 0 )
     {
         SSL_DEBUG_MSG( 2, ( "message length: %d, out_left: %d",
