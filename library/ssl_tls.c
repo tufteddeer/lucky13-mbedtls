@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EmptyDeclOrStmt"
 /*
  *  SSLv3/TLSv1 shared functions
  *
@@ -3873,3 +3875,5 @@ void ssl_free( ssl_context *ssl )
 }
 
 #endif
+
+#pragma clang diagnostic pop
