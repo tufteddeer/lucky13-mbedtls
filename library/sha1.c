@@ -78,6 +78,7 @@ void sha1_starts( sha1_context *ctx )
 
 static void sha1_process( sha1_context *ctx, const unsigned char data[64] )
 {
+    puts("sha1_process");
     uint32_t temp, W[16], A, B, C, D, E;
 
     GET_UINT32_BE( W[ 0], data,  0 );
