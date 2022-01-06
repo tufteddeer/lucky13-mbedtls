@@ -78,7 +78,7 @@ void sha1_starts( sha1_context *ctx )
 
 static void sha1_process( sha1_context *ctx, const unsigned char data[64] )
 {
-    puts("sha1_process");
+    //puts("sha1_process");
     uint32_t temp, W[16], A, B, C, D, E;
 
     GET_UINT32_BE( W[ 0], data,  0 );
@@ -265,6 +265,7 @@ void sha1_update( sha1_context *ctx, const unsigned char *input, size_t ilen )
 
     while( ilen >= 64 )
     {
+        //puts("while ilen >= 64 loop");
         sha1_process( ctx, input );
         input += 64;
         ilen  -= 64;
@@ -432,6 +433,13 @@ void sha1_hmac( const unsigned char *key, size_t keylen,
                 const unsigned char *input, size_t ilen,
                 unsigned char output[20] )
 {
+    /*puts("calling sha1_hmac");
+    printf("key: %s\n", key);
+    printf("key length: %zu\n", keylen);
+
+    printf("input: %s\n", key);
+    printf("input length: %zu\n", ilen);*/
+
     sha1_context ctx;
 
     sha1_hmac_starts( &ctx, key, keylen );
