@@ -39,7 +39,7 @@
 #include "polarssl/error.h"
 #include "polarssl/certs.h"
 
-#define SERVER_PORT 4433
+#define SERVER_PORT 9091
 #define SERVER_NAME "localhost"
 #define GET_REQUEST "GET / HTTP/1.0\r\n\r\n"
 
@@ -213,7 +213,12 @@ int main( int argc, char *argv[] )
     printf( "  > Write to server:" );
     fflush( stdout );
 
-    len = sprintf( (char *) buf, GET_REQUEST );
+    // write a TLS record with 42 bytes of application data
+    // the content does not matter for this demonstration, so we use the 'M' character
+    // (0x4d) to make it easy to identify in the logs
+    int request_len = 42;
+    memset(buf, 'M', request_len);
+    len = request_len;
 
     while( ( ret = ssl_write( &ssl, buf, len ) ) <= 0 )
     {
