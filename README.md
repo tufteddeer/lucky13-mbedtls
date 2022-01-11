@@ -1,3 +1,7 @@
+This is an outdated and vulnerable copy of [Mbed TLS](https://github.com/ARMmbed/mbedtls) 1.2.4. to demonstrate padding oracles.
+
+---
+
 The example program demonstrating HMAC-SHA1 timing differences with messages of different lengths can be found in the `hmac-sha1-rounds` branch.
 
 # Building
