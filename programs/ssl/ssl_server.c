@@ -326,7 +326,7 @@ reset:
     // invalid padding and/or MAC gives us the same error message (see lucky13 paper part 1.3, page 4)
     if (ret == POLARSSL_ERR_SSL_INVALID_MAC)
     {
-        puts("received stuff with invalid MAC, maybe someone messed with the padding?");
+        puts("received record with invalid MAC, maybe someone messed with the padding?");
         ssl_send_alert_message(&ssl, SSL_ALERT_LEVEL_FATAL, SSL_ALERT_MSG_BAD_RECORD_MAC); // is this correct?
         goto reset;
     }
