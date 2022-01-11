@@ -17,3 +17,5 @@ make ssl_server ssl_client1
 # Running
 
 Binaries are in `build/programs/ssl/`, just run `ssl_server` and `ssl_client1`
+
+Note that the client will connect to port 9091, while the server listens at 4433. This is because it is intended to be used in combination with a proxy.
