@@ -216,9 +216,8 @@ int main( int argc, char *argv[] )
     // write a TLS record with 42 bytes of application data
     // the content does not matter for this demonstration, so we use the 'M' character
     // (0x4d) to make it easy to identify in the logs
-    int request_len = 42;
-    memset(buf, 'M', request_len);
-    len = request_len;
+    len = 42;
+    memset(buf, 'M', len);
 
     while( ( ret = ssl_write( &ssl, buf, len ) ) <= 0 )
     {
